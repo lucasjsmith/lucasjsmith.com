@@ -2,6 +2,7 @@ body::before {
     background-image: url('images/bg.jpg');
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     content: '';
     will-change: transform;
     z-index: -1;
@@ -123,6 +124,7 @@ body .ljsc {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 10px;
 }
 .ljsc .ljs-header h1 {
   color: white;
@@ -135,7 +137,7 @@ body .ljsc {
 }
 
 .ljsc .mini-bio .mdl-card__media {
-  background-image: url('images/ljs.jpg');
+  background-image: url('images/ljs-cover.jpg');
   cursor: default;
 }
 .ljsc .mini-bio .mdl-card__supporting-text {
@@ -143,35 +145,51 @@ body .ljsc {
 }
 
 
-.ljsc .transitlens .mdl-card__media {
-  background-image: url('images/transitlens.png');
-  cursor: pointer;
+.ljsc .transitlens-card .mdl-card__media {
+  background-image: url('images/transitlens-cover.png');
+  cursor: default;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.ljsc .transitlens > button {
+.ljsc .transitlens-card > button {
   position: absolute;
   top: 0;
   right: 28px;
   transform: translate(0px, -28px);
 }
-.ljsc .transitlens .transitlens-logo{
+.ljsc .transitlens-card .transitlens-logo{
   font-family: "Lato";
   font-size: 40px;
   text-decoration: none;
 }
-.ljsc .transitlens img {
+.ljsc .transitlens-card img {
   width: 38px;
   height: 38px;
   transform: translateY(-5px);
   padding-right: 5px;
 }
 
+.ljsc .photospheres-card .mdl-card__media {
+  background-image: url('images/photospheres-cover.png');
+  cursor: default;
+  color: white;
+}
+
 .mdl-card__actions .mdl-button .ljsc-small-mdl-icon {
   font-size: 16px;
 }
+
+.ljsc .mind-games-card .mdl-card__media {
+  background-image: url('images/mindgames-cover.png');
+  cursor: default;
+  color: white;
+}
+.mindgames-title {
+  background-color: rgba(0,0,0,0.2);
+}
+
 
 
 .ljsc .something-else .mdl-card__media {
@@ -406,6 +424,6 @@ body .ljsc {
   height: 120px;
   padding: 40px;
   align-items: center;
-  background-color: white;
-  box-sizing: border-box;
+/*  background-color: grey;
+*/  box-sizing: border-box;
 }

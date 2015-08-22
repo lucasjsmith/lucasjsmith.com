@@ -40,39 +40,77 @@
 	<body>
     <div class="ljsc mdl-layout mdl-js-layout is-upgraded">
       <main class="mdl-layout__content">
-        <div class="ljsc__posts ljs-header">
-          <h1>Lucas J Smith</h1>
-        </div>
         <div class="ljsc__posts mdl-grid">
+          <!-- Name header -->
+          <div class="mdl-cell--12-col ljs-header">
+            <h1> Lucas J Smith</h1>
+          </div>
           <!-- Mini-Bio Card -->
           <div class="mdl-card mdl-shadow--2dp mini-bio mdl-cell mdl-cell--4-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
+            <div class="mdl-card__media mdl-color--white">
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-800">
               Lucas is a transit enthusiast, intern at SFMTA, and a graduate of the USC Price School of Public Policy.<!-- At USC, Lucas was a director for ATVN and Executive Producer of the award-winning TV game show Mind Games. -->
             </div>
           </div>
           <!-- Transit Lens Card -->
-          <div class="mdl-card mdl-shadow--2dp transitlens mdl-cell mdl-cell--8-col">
+          <div class="mdl-card mdl-shadow--2dp transitlens-card mdl-cell mdl-cell--8-col">
             <!-- Commented because the FAB kept getting cut off. -->
             <!-- <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
               <i class="material-icons mdl-color-text--white" role="presentation">launch</i>
               <span class="visuallyhidden">launch</span>
             </button> -->
-            <div class="mdl-card__media">
+            <div class="mdl-card__media mdl-color--orange">
               <a href="http://transitlens.org" target=blank class="transitlens-logo"><img src="images/transitlens-logo.png">Transit Lens</a>
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-700">
               Transit Lens is a webapp that uses real-world data to explore what is in reach by transit from different starting points and how that changes with time. I built it as my Honors in Multimedia Scholarship thesis.
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://transitlens.org" target=blank>View at transitlens.org <i class="material-icons ljsc-small-mdl-icon">launch</i></a>
+              <a class="mdl-button mdl-color--orange mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://transitlens.org" target=blank>View at transitlens.org <i class="material-icons ljsc-small-mdl-icon">launch</i></a>
               <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://github.com/lucasjsmith/transitlens">Source at Github</a>
             </div> 
           </div>
+          <!-- Photosphere Card -->
+          <div class="mdl-card mdl-shadow--2dp photospheres-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+            <div class="mdl-card__media mdl-color--purple">
+              <h3>Photo Spheres</h3>
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-700">
+              360º Photo Spheres I've created around the world
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-color--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="https://www.google.com/maps/contrib/113127238893009893410/photos/">View at Google Maps</a>
+            </div>
+          </div>
+          <!-- Mind Games Card -->
+          <div class="mdl-card mdl-shadow-2dp mind-games-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+            <div class="mdl-card__media mdl-color--grey">
+              <div class="card-media-gradient"></div>
+              <h3>Mind Games</h3>
+            </div>
+            <div class="mdl-card__supporting-text">
+              From 2012-2015, I was the Executive Producer, Head Writer, and often host of "South L.A.'s #1 T.V. Game Show" Mind Games.
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-color--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://trojanvision.usc.edu/category/mind-games/">Watch at TrojanVision.com</a>
+            </div>
+          </div>
         </div>
+
+        <footer class="mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <div class="mdl-logo">© 2015 Lucas J Smith</div>
+            <ul class="mdl-mini-footer__link-list">
+              <li><a href="http://twitter.com/LucasJSmith">Twitter</a></li>
+              <li><a href="mailto:hi@lucasjsmith.com" target=>Email</a></li>
+            </ul>
+
+          </div>
+        </footer>
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
+
 	</body>
 </html>
