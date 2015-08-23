@@ -4,6 +4,7 @@ body::before {
     background-attachment: fixed;
     background-position: center;
     content: '';
+    background-color: #6ca7ea;
     will-change: transform;
     z-index: -1;
     left: 0;
@@ -129,30 +130,91 @@ body .ljsc {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255,255,255,.3);
   border-radius: 2px;
   margin: 10px;
   color: white;
   text-shadow: 
-    1px 1.5px #000,
-    2px 3px #000,
-    3px 4.5px #000,
-    4px 6px #000;
+  #000 .01em .01em 0, 
+  #000 .02em .02em 0, 
+  #000 .03em .03em 0, 
+  #000 .04em .04em 0, 
+  #000 .05em .05em 0, 
+  #000 .06em .06em 0, 
+  #000 .07em .07em 0,
+  #000 .08em .08em 0, 
+  #000 .09em .09em 0, 
+  #000 .10em .10em 0,
+  #000 .11em .11em 0, 
+  #000 .12em .12em 0, 
+  #000 .13em .13em 0, 
+  #000 .14em .14em 0, 
+  #000 .15em .15em 0, 
+  #000 .16em .16em 0, 
+  #000 .17em .17em 0,
+  #000 .18em .18em 0, 
+  #000 .19em .19em 0, 
+  #000 .20em .20em 0,
+  #000 .21em .21em 0, 
+  #000 .22em .22em 0, 
+  #000 .23em .23em 0, 
+  #000 .24em .24em 0, 
+  #000 .25em .25em 0, 
+  #000 .26em .26em 0, 
+  #000 .27em .27em 0,
+  #000 .28em .28em 0, 
+  #000 .29em .29em 0,
+  #000 .30em .30em 0,
+  #000 .31em .31em 0, 
+  #000 .32em .32em 0, 
+  #000 .33em .33em 0, 
+  #000 .34em .34em 0, 
+  #000 .35em .35em 0, 
+  #000 .36em .36em 0, 
+  #000 .37em .37em 0,
+  #000 .38em .38em 0, 
+  #000 .39em .39em 0,
+  #000 .40em .40em 0,
+  #000 .41em .41em 0, 
+  #000 .42em .42em 0, 
+  #000 .43em .43em 0, 
+  #000 .44em .44em 0, 
+  #000 .45em .45em 0, 
+  #000 .46em .46em 0, 
+  #000 .47em .47em 0,
+  #000 .48em .48em 0, 
+  #000 .49em .49em 0, 
+  #000 .50em .50em 0,
+  #000 .51em .51em 0, 
+  #000 .52em .52em 0, 
+  #000 .53em .53em 0, 
+  #000 .54em .54em 0, 
+  #000 .55em .55em 0, 
+  #000 .56em .56em 0, 
+  #000 .57em .57em 0,
+  #000 .58em .58em 0, 
+  #000 .59em .59em 0, 
+  #000 .60em .60em 0,
+/*  #000 .61em .61em 0, 
+  #000 .62em .62em 0, 
+  #000 .63em .63em 0, 
+  #000 .64em .64em 0, 
+  #000 .65em .65em 0, 
+  #000 .66em .66em 0, 
+  #000 .67em .67em 0,
+  #000 .68em .68em 0, 
+  #000 .69em .69em 0, 
+  #000 .70em .70em 0*/;
 }
 .ljsc .ljs-header h1 {
   /*color: white;*/
   margin: 24px 16px;
-  font-family: "Georgia";
-  font-weight: bold;
-  font-size: 80px;
-  font-style: italic;
-  letter-spacing: 1px;
+  font-family: "MissionGothic";
+  font-size: 90px;
   line-height: 1;
 }
 
 .ljsc .mini-bio .mdl-card__media {
   background-image: url('images/ljs-cover.jpg');
-  cursor: default;
 }
 .ljsc .mini-bio .mdl-card__supporting-text {
   font-size: 16px;
@@ -160,7 +222,6 @@ body .ljsc {
 
 .ljsc .transitlens-card .mdl-card__media {
   background-image: url('images/transitlens-cover.png');
-  cursor: default;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -186,7 +247,6 @@ body .ljsc {
 
 .ljsc .photospheres-card .mdl-card__media {
   background-image: url('images/photospheres-cover.png');
-  cursor: default;
   color: white;
 }
 
@@ -196,7 +256,6 @@ body .ljsc {
 
 .ljsc .mind-games-card .mdl-card__media {
   background-image: url('images/mindgames-cover.png');
-  cursor: default;
   color: white;
 }
 .mindgames-title {
@@ -447,25 +506,22 @@ body .ljsc {
   opacity: 0.46;
   border-radius: 2px;
 }
-.social-btn__twitter {
-  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_black_24dp.png');
+.social-btn img {
+  width: 24px;
+  height: 24x;
+  padding: none;
 }
-.social-btn__blogger {
-  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_facebook_black_24dp.png');
+.social-btn__linkedin {
+  background-image: url('images/linkedin-box.png')
 }
-.social-btn__gplus {
-  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_gplus_black_24dp.png');
-}
-.social-btn__share {
-  color: rgba(0, 0, 0, 0.54);
-  background: transparent;
+.social-btn__email {
+  background-image: url('images/email.png');
 }
 
 .ljsc .mdl-mini-footer {
   margin-top: 80px;
-  height: 120px;
+  min-height: 120px;
   padding: 40px;
   align-items: center;
-/*  background-color: grey;
-*/  box-sizing: border-box;
+  box-sizing: border-box;
 }

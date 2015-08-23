@@ -10,26 +10,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Lucas J Smith</title>
 
-		<!-- FIXME -- make these things work for real -->
+		<!-- Favicons and stuff -->
 
-		<!-- Add to homescreen for Chrome on Android -->
+    <meta name="theme-color" content="#03A9F4">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-	  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-	  <meta name="apple-mobile-web-app-title" content="Lucas J smith">
-	  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Lucas J smith">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
 
-	  <!-- Tile icon for Win8 (144x144 + tile color) -->
-	  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-	  <meta name="msapplication-TileColor" content="#3372DF">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
 
-    <!-- Roboto + Material Icons for MDL, Lato for Transit Lens,  -->
+    <!-- Roboto + Material Icons for MDL, Lato for Transit Lens, Mission Gothic for title -->
 	  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,300italic' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.	com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
 
     <!-- MDL and custom CSS/JS -->
     <link rel="stylesheet" href="material.min.css">
@@ -75,7 +76,7 @@
           <!-- Photosphere Card -->
           <div class="mdl-card card-full mdl-shadow--2dp photospheres-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
             <div class="mdl-card__media mdl-color--purple">
-              <h3>Photo Spheres</h3>
+              <h3><a href="https://www.google.com/maps/contrib/113127238893009893410/photos/">Photo Spheres</a></h3>
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-700">
               360º Photo Spheres I've created around the world
@@ -88,9 +89,9 @@
           <div class="mdl-card card-full mdl-shadow-2dp mind-games-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
             <div class="mdl-card__media mdl-color--grey">
               <div class="card-media-gradient"></div>
-              <h3>Mind Games</h3>
+              <h3><a href="http://trojanvision.usc.edu/category/mind-games/">Mind Games</a></h3>
             </div>
-            <div class="mdl-card__supporting-text">
+            <div class="mdl-card__supporting-text mdl-color-text--grey-700">
               From 2012-2015, I was the Executive Producer, Head Writer, and often host of "South L.A.'s #1 T.V. Game Show" Mind Games.
             </div>
             <div class="mdl-card__actions mdl-card--border">
@@ -113,7 +114,6 @@
               </a>
               <div class="mdl-layout-spacer"></div>
               <i class="material-icons">description</i>
-
             </div>
           </div>
           <!-- Contact Card -->
@@ -142,22 +142,37 @@
             </div>
             <div class="mdl-card__actions mdl-card--border">
               <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://twitter.com/LucasJSmith">
-                View Twitter
+                Go To Twitter
               </a>
               <div class="mdl-layout-spacer"></div>
-              <i class="material-icons">chat</i>
+              <i class="material-icons">question_answer</i>
             </div>
           </div>
         </div>
 
         <footer class="mdl-mini-footer">
           <div class="mdl-mini-footer--left-section">
+            <button class="mdl-mini-footer--social-btn social-btn social-btn__linkedin">
+              <a href="http://linkedin.com/in/lucasjsmith">
+                <span class="visuallyhidden">LinkedIn</span>
+                <img src="images/linkedin-box.png">
+              </a>
+            </button>
+            <button class="mdl-mini-footer--social-btn social-btn social-btn__github">
+              <a href="https://github.com/lucasjsmith/">
+                <span class="visuallyhidden">GitHub</span>
+                <img src="images/github-box.png">
+              </a>            
+            </button>
+            <button class="mdl-mini-footer--social-btn social-btn social-btn__email">
+              <a href="mailto:hi@lucasjsmith.com">
+                <span class="visuallyhidden">Email</span>
+                <img src="images/email.png">
+              </a>            
+            </button>
+          </div>
+          <div class="mdl-mini-footer--right-section">
             <div class="mdl-logo">© 2015 Lucas J Smith</div>
-            <ul class="mdl-mini-footer__link-list">
-              <!-- <li><a href="http://twitter.com/LucasJSmith">Twitter</a></li> -->
-              <li><a href="mailto:hi@lucasjsmith.com" target=blank>Email hi@lucasjsmith.com</a></li>
-            </ul>
-
           </div>
         </footer>
       </main>
@@ -165,4 +180,19 @@
     </div>
 
 	</body>
+    <script>
+    Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
+      var link = el.querySelector('a');
+      if(!link) {
+        return;
+      }
+      var target = link.getAttribute('href');
+      if(!target) {
+        return;
+      }
+      el.addEventListener('click', function() {
+        location.href = target;
+      });
+    });
+  </script>
 </html>
