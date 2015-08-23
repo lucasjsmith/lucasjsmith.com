@@ -129,18 +129,19 @@ body .ljsc {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 10px;
-  color: #B3E5FC;
+  background-color: rgba(255,255,255,.3);
+  border-radius: 2px;
+  margin: 10px;
+  color: white;
   text-shadow: 
-    1px 1px #000,
-    2px 2px #000,
-    3px 3px #000,
-    4px 4px #000,
-    5px 5px #000;
-
+    1px 1.5px #000,
+    2px 3px #000,
+    3px 4.5px #000,
+    4px 6px #000;
 }
 .ljsc .ljs-header h1 {
   /*color: white;*/
+  margin: 24px 16px;
   font-family: "Georgia";
   font-weight: bold;
   font-size: 80px;
