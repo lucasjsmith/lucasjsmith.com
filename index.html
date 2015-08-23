@@ -42,11 +42,11 @@
       <main class="mdl-layout__content">
         <div class="ljsc__posts mdl-grid">
           <!-- Name header -->
-          <div class="mdl-cell--12-col ljs-header">
+          <div class="mdl-card mdl-cell--12-col ljs-header ">
             <h1> Lucas J Smith</h1>
           </div>
           <!-- Mini-Bio Card -->
-          <div class="mdl-card mdl-shadow--2dp mini-bio mdl-cell mdl-cell--4-col">
+          <div class="mdl-card card-full mdl-shadow--2dp mini-bio mdl-cell mdl-cell--4-col">
             <div class="mdl-card__media mdl-color--white">
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-800">
@@ -54,7 +54,7 @@
             </div>
           </div>
           <!-- Transit Lens Card -->
-          <div class="mdl-card mdl-shadow--2dp transitlens-card mdl-cell mdl-cell--8-col">
+          <div class="mdl-card card-full mdl-shadow--2dp transitlens-card mdl-cell mdl-cell--8-col">
             <!-- Commented because the FAB kept getting cut off. -->
             <!-- <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
               <i class="material-icons mdl-color-text--white" role="presentation">launch</i>
@@ -67,12 +67,12 @@
               Transit Lens is a webapp that uses real-world data to explore what is in reach by transit from different starting points and how that changes with time. I built it as my Honors in Multimedia Scholarship thesis.
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-color--orange mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://transitlens.org" target=blank>View at transitlens.org <i class="material-icons ljsc-small-mdl-icon">launch</i></a>
+              <button class="mdl-button mdl-color--orange mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://transitlens.org" target=blank>View at transitlens.org <i class="material-icons ljsc-small-mdl-icon">launch</i></button>
               <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://github.com/lucasjsmith/transitlens">Source at Github</a>
             </div> 
           </div>
           <!-- Photosphere Card -->
-          <div class="mdl-card mdl-shadow--2dp photospheres-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+          <div class="mdl-card card-full mdl-shadow--2dp photospheres-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
             <div class="mdl-card__media mdl-color--purple">
               <h3>Photo Spheres</h3>
             </div>
@@ -80,11 +80,11 @@
               360º Photo Spheres I've created around the world
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-color--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="https://www.google.com/maps/contrib/113127238893009893410/photos/">View at Google Maps</a>
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-button mdl-js-ripple-effect" href="https://www.google.com/maps/contrib/113127238893009893410/photos/">View at Google Maps</a>
             </div>
           </div>
           <!-- Mind Games Card -->
-          <div class="mdl-card mdl-shadow-2dp mind-games-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+          <div class="mdl-card card-full mdl-shadow-2dp mind-games-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
             <div class="mdl-card__media mdl-color--grey">
               <div class="card-media-gradient"></div>
               <h3>Mind Games</h3>
@@ -93,7 +93,58 @@
               From 2012-2015, I was the Executive Producer, Head Writer, and often host of "South L.A.'s #1 T.V. Game Show" Mind Games.
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-color--accent mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://trojanvision.usc.edu/category/mind-games/">Watch at TrojanVision.com</a>
+              <a class="mdl-button mdl-color--green mdl-color-text--white mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://trojanvision.usc.edu/category/mind-games/">Watch at TrojanVision.com</a>
+            </div>
+          </div>
+          <!-- Resume card -->
+          <div class="mdl-card card-short mdl-shadow--2dp resume-card mdl-cell mdl-cell--4-col">
+            <div class="mdl-card__title mdl-card--expand">
+              <h4>
+                Hire Me!</h4>
+              </h4>
+            </div>
+             <div class="mdl-card__title mdl-card--expand">
+              (or just learn about my work experience)
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://resume.lucasjsmith.com">
+                View Resume
+              </a>
+              <div class="mdl-layout-spacer"></div>
+              <i class="material-icons">description</i>
+
+            </div>
+          </div>
+          <!-- Contact Card -->
+          <div class="mdl-card card-short mdl-shadow--2dp contact-card mdl-cell mdl-cell--4-col">
+            <div class="mdl-card__title mdl-card--expand">
+              <h4>
+                Contact me:
+                hi@lucasjsmith.com
+              </h4>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="mailto:hi@lucasjsmith.com">
+                Send Email
+              </a>
+              <div class="mdl-layout-spacer"></div>
+              <i class="material-icons">mail</i>
+            </div>
+          </div> 
+          <!-- Twitter Card -->
+          <div class="mdl-card card-short mdl-shadow--2dp twitter-card mdl-cell mdl-cell--4-col">
+            <div class="mdl-card__title mdl-card--expand">
+              <h4>
+                Tweet me:<br>
+                @lucasjsmith
+              </h4>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://twitter.com/LucasJSmith">
+                View Twitter
+              </a>
+              <div class="mdl-layout-spacer"></div>
+              <i class="material-icons">chat</i>
             </div>
           </div>
         </div>
@@ -102,8 +153,8 @@
           <div class="mdl-mini-footer--left-section">
             <div class="mdl-logo">© 2015 Lucas J Smith</div>
             <ul class="mdl-mini-footer__link-list">
-              <li><a href="http://twitter.com/LucasJSmith">Twitter</a></li>
-              <li><a href="mailto:hi@lucasjsmith.com" target=>Email</a></li>
+              <!-- <li><a href="http://twitter.com/LucasJSmith">Twitter</a></li> -->
+              <li><a href="mailto:hi@lucasjsmith.com" target=blank>Email hi@lucasjsmith.com</a></li>
             </ul>
 
           </div>
