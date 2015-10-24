@@ -1,0 +1,8 @@
+{
+  "name": "marzipano",
+  "version": "0.4.0",
+  "description": "A 360° media viewer for the modern web",
+  "main": "marzipano.js",
+  "author": "Digisfera (marzipano@digisfera.com)",
+  "license": "Proprietary"
+}
