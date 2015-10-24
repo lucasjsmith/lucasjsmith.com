@@ -2,13 +2,13 @@
 <html lang="en">
 	<head>
     <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="Lucas J Smith's Photo Spheres">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Photo Spheres | LucasJSmith.com</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Lucas J Smith's Photo Spheres">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Photo Spheres | LucasJSmith.com</title>
 
-		<!-- Favicons and stuff -->
-    <!-- <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<!-- Favicons and stuff -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
@@ -26,7 +26,7 @@
     <meta name="application-name" content="Photo Spheres | LucasJSmith.com">
     <meta name="msapplication-TileColor" content="#5f9ad2">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#5f9ad2"> -->
+    <meta name="theme-color" content="#5f9ad2">
 
     <!-- Roboto + Material Icons for MDL, Lato for Transit Lens, Mission Gothic for title -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
@@ -35,9 +35,10 @@
     <link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
 
     <!-- MDL and custom CSS/JS -->
-    <link rel="stylesheet" href="material.min.css">
+    <link rel="stylesheet" href="../material.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="material.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="../reset.css"> -->
+    <script src="/material.min.js"></script>
 
     <!-- Marzipano stuff -->
     <script src="es5-shim.js"></script>
@@ -50,13 +51,40 @@
 
 	</head>
     <body>
-        <div id="mainPano"></div>
-        <script type="text/javascript">
-            console.log("hi");
+        
+            <div id="leftPane"></div>
+            <div id="rightPane">
+                <h2 class="sidebarTitle">Photo Spheres</h2>
+                <div id="cardContainer">
+                    <div class="mdl-card mdl-card--shadow-4dp">
+                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
+                            <h2 class="mdl-card__title-text">Latest PS</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
+                      </div>
+                      <div class="mdl-card mdl-card--shadow-4dp">
+                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
+                            <h2 class="mdl-card__title-text">Latest PS</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
+                      </div>
+                      <div class="mdl-card mdl-card--shadow-4dp">
+                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
+                            <h2 class="mdl-card__title-text">Latest PS</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
+                      </div>
+                </div>
+            </div>
 
+        <!-- <div id="mainPano"></div> -->
+
+
+
+        <script type="text/javascript">
             var Marzipano = window.Marzipano;
 
-            var panoElement = document.getElementById('mainPano');
+            var panoElement = document.getElementById('leftPane');
             var viewerOpts = {
                 swfPath: 'marzipano.swf',
                 controls: {
@@ -71,10 +99,10 @@
             //   { tileSize: 512: size: 1024 }
             // ];
 
-            var geometry = new Marzipano.EquirectGeometry([{ width: 4000 }]);
+            var geometry = new Marzipano.EquirectGeometry([{ width: 300 }]);
             var source = Marzipano.ImageUrlSource.fromString("psImages/PANO_20141225_160432.jpg");
 
-            // var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(1024, 100*Math.PI/180);
+            var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(1024, 100*Math.PI/180);
             var view = new Marzipano.RectilinearView();
 
             var scene = viewer.createScene({

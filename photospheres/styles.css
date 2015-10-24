@@ -1,4 +1,37 @@
+body {
+	margin: 0;
+}
+
 #mainPano {
 	height: 100%;
 	width: 100%;
+}
+
+#leftPane {
+	display: inline-block;
+	float: left;
+	background: gray;
+	height: 100%;
+	width: 80%;
+}
+
+#rightPane {
+	float: right;
+	display: inline-block;
+	background: green;
+	height: 100%;
+	width: 20%;
+	overflow-y: auto; 
+}
+#cardContainer {
+
+	overflow-y:auto;
+}
+
+#rightPane .mdl-card {
+	margin: 4px;
+}
+
+.mdl-card .mdl-card__title {
+	  height: 150px;
 }
