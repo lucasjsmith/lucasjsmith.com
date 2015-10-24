@@ -39,5 +39,7 @@
 		}
 	],
 	"start_url": "http:\/\/lucasjsmith.com",
-	"display": "standalone"
+	"display": "standalone",
+	"background_color": "#5f9ad2",
+	"theme color": "#5f9ad2"
 }
