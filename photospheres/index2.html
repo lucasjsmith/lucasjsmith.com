@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="styles2.css">
     <!-- <link rel="stylesheet" type="text/css" href="../reset.css"> -->
     <script src="../material.min.js"></script>
+    <script src="panoList.js"></script>
 
     <!-- Marzipano stuff -->
     <script src="es5-shim.js"></script>
@@ -55,19 +56,72 @@
             <header class="mdl-layout__header" id="header">
                 <div class="mdl-layout__header-row">
                     <div class="mdl-layout-spacer"></div>
-                    <i class="material-icons">navigate_before</i>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrLast">
+                        <i class="material-icons">navigate_before</i>
+                    </button>
                     <div class="mdl-layout-spacer"></div>
-                    <span class="mdl-layout-title">Photosphere Name</span>
+                    <i class="material-icons">place</i>
+                    <span class="mdl-layout-title currentTitle">&nbsp;Mt. Baker Beach</span>
                     <i class="mdl-layout-spacer"></i>
-                    <i class="material-icons">navigate_next</i>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrNext">
+                        <i class="material-icons">navigate_next</i>
+                    </button>
                     <div class="mdl-layout-spacer"></div>
 
                 </div>
             </header>
-            <div class="mdl-layout__drawer">
+            <div class="mdl-layout__drawer  mdl-color--grey-800 mdl-color-text--white sideDrawer">
                 <span class="mdl-layout-title">Photo Spheres</span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="#"></a>
+                    <a class="mdl-navigation__link" href="http://lucasjsmith.com">Back to LucasJSmith.com</a>
+                    <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
+                        <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
+                            <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Christmas Day 2014
+                        </div>
+                    </div>
+                    <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
+                        <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
+                            <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Christmas Day 2014
+                        </div>
+                    </div>
+                    <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
+                        <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
+                            <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
+                        </div>
+<!--                         <div class="mdl-card__supporting-text">
+                            Christmas Day 2014
+                        </div> -->
+                    </div>
+                    <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
+                        <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
+                            <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Christmas Day 2014
+                        </div>
+                    </div>
+                    <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
+                        <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
+                            <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Christmas Day 2014
+                        </div>
+                    </div>
+                    <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
+                        <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
+                            <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Christmas Day 2014
+                        </div>
+                    </div>
                 </nav>
             </div>
             <main class="mdl-layout__content" id="">
@@ -80,7 +134,7 @@
 
 
         <script type="text/javascript">
-            var Pannonating = (function() {
+            var StartPano = (function() {
 
                 var Marzipano = window.Marzipano;
 
@@ -97,7 +151,7 @@
 
 
                 var geometry = new Marzipano.EquirectGeometry([{ width: 6656 }]);
-                var source = Marzipano.ImageUrlSource.fromString("psImages/PANO_20141225_160432.jpg");
+                var source = Marzipano.ImageUrlSource.fromString("panoImages/PANO_20141225_160432.jpg");
 
                 var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500 * Math.PI / 180);
                 var view = new Marzipano.RectilinearView(null, limiter);
@@ -110,6 +164,26 @@
 
                 scene.switchTo();
             })();
+
+        var activePanoIds = [1,3,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21,22];
+
+        // console.log(activePanoIds);
+        // console.log(panoList);
+        
+        for (i=0; i < panoList.length; i++ ) {
+            console.log(panoList[i].number);
+            var match = false;
+            for (j in activePanoIds) {
+                console.log(panoList[i].number + activePanoIds[j]);
+                if ((panoList[i].number = activePanoIds[j]) && (match = false)) {
+                    console.log("match");
+                    match = true;
+
+                }
+            }
+            
+        }
+
 
 
         </script>

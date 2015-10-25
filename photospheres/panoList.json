@@ -1,0 +1,156 @@
+[
+    {
+        "number": 1,
+        "title": "Exposition Park",
+        "location": "Exposition Park, Los Angeles",
+        "blurb": "Natural History Museum lawn",
+        "filename": "PANO_20140427.jpg",
+        "width": 6656
+    },
+    {
+        "number": 2,
+        "filename": "PANO_20140505_173015.jpg"
+    },
+    {
+        "number": 3,
+        "title": "LA Coliseum",
+        "location": "Los Angeles Memorial Coliseum",
+        "filename": "PANO_20140505_174801.jpg",
+        "width": 6656
+    },
+    {
+        "number": 4,
+        "filename": "PANO_20140514.jpg"
+    },
+    {
+        "number": 5,
+        "title": "Alki Beach",
+        "location": "Alki Beach, Seattle",
+        "filename": "PANO_20140530.jpg",
+        "width": 6656
+    },
+    {
+        "number": 6,
+        "title": "Roman Forum",
+        "location": "Roman Forum",
+        "filename": "PANO_20140606.jpg",
+        "width": 6656
+    },
+    {
+        "number": 7,
+        "title": "Musee Massena",
+        "location": "Musee Massena, Nice",
+        "filename": "PANO_20140619.jpg",
+        "width": 6656
+    },
+    {
+        "number": 8,
+        "title": "Portlligat Beach",
+        "location": "Portlligat Beach, Spain",
+        "blurb": "By Salvador Dali's house",
+        "filename": "PANO_20140629_190859.jpg",
+        "width": 6656
+    },
+    {
+        "number": 9,
+        "title": "Jardines de Laribal",
+        "location": "Jardines de Laribal, Barcelona",
+        "blurb": "Barcelona",
+        "filename": "PANO_20140703.jpg",
+        "width": 6656
+    },
+    {
+        "number": 10,
+        "filename": "PANO_20140707_154145.jpg"
+    },
+    {
+        "number": 11,
+        "title": "Girona Cathedral",
+        "location": "Girona, Spain",
+        "filename": "PANO_20140707_173752.jpg",
+        "width": 6656
+    },
+    {
+        "number": 12,
+        "title": "Hospital de Sant Pau",
+        "location": "Hospital de la Santa Creu i Sant Pau",
+        "blurb": "Barcelona",
+        "filename": "PANO_20140709_113612.jpg",
+        "width": 6656
+    },
+    {
+        "number": 13,
+        "title": "Hospital de Sant Pau",
+        "location": "Hospital de la Santa Creu i Sant Pau",
+        "blurb": "Barcelona",
+        "filename": "PANO_20140709_121045.jpg",
+        "width": 6656
+    },
+    {
+        "number": 14,
+        "title": "Basel Marktplatz",
+        "location": "Basel Marktplatz",
+        "filename": "PANO_20140716_201550.jpg",
+        "width": 6656
+    },
+    {
+        "number": 15,
+        "title": "Barnsdall Park",
+        "location": "Barnsdall Park, Los Angeles",
+        "blurb": "Los Angeles",
+        "filename": "PANO_20140909_133302.jpg",
+        "width": 6656
+    },
+    {
+        "number": 16,
+        "title": "Hermosa Beach Pier",
+        "location": "Hermosa Beach Pier",
+        "filename": "PANO_20141023.jpg",
+        "width": 6656
+    },
+    {
+        "number": 17,
+        "title": "Mt. Baker Beach",
+        "location": "Mt. Baker Beach",
+        "blurb": "Christmas Day, 2014",
+        "filename": "PANO_20141225.jpg",
+        "width": 6656,
+        "maxresolutionandmaxfov": "2048, 500 * Math.PI / 180"
+    },
+    {
+        "number": 18,
+        "title": "Grand Park",
+        "location": "Grand Park, Los Angeles",
+        "filename": "PANO_20150210.jpg",
+        "width": 6656
+    },
+    {
+        "number": 19,
+        "title": "Bonaventure Hotel",
+        "location": "Bonaventure Hotel",
+        "filename": "PANO_20150212.jpg",
+        "width": 6656
+    },
+    {
+        "number": 20,
+        "title": "Stearns Wharf",
+        "location": "Stearns Wharf, Santa Barbara",
+        "blurb": "Santa Barbara",
+        "filename": "PANO_20150318.jpg",
+        "width": 6656
+    },
+    {
+        "number": 21,
+        "title": "California Redwoods",
+        "location": "Redwood State & National Park",
+        "filename": "PANO_20150519.jpg",
+        "width": 6656
+    },
+    {
+        "number": 22,
+        "title": "SF Civic Center",
+        "location": "Civic Center Plaza, San Francisco",
+        "filename": "PANO_20150625.jpg",
+        "width": 8192
+    }
+]

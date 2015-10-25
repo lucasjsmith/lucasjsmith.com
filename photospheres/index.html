@@ -57,19 +57,19 @@
                 <h2 class="sidebarTitle">Photo Spheres</h2>
                 <div id="cardContainer">
                     <div class="mdl-card mdl-card--shadow-4dp">
-                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
+                        <div class="mdl-card__title" style="background: url('panoImages/PANO_20141225_160432.jpg') center / cover;">
                             <h2 class="mdl-card__title-text">Latest PS</h2>
                         </div>
                         <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
                       </div>
                       <div class="mdl-card mdl-card--shadow-4dp">
-                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
+                        <div class="mdl-card__title" style="background: url('panoImages/PANO_20141225_160432.jpg') center / cover;">
                             <h2 class="mdl-card__title-text">Latest PS</h2>
                         </div>
                         <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
                       </div>
                       <div class="mdl-card mdl-card--shadow-4dp">
-                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
+                        <div class="mdl-card__title" style="background: url('panoImages/PANO_20141225_160432.jpg') center / cover;">
                             <h2 class="mdl-card__title-text">Latest PS</h2>
                         </div>
                         <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
@@ -97,7 +97,7 @@
 
 
             var geometry = new Marzipano.EquirectGeometry([{ width: 6656 }]);
-            var source = Marzipano.ImageUrlSource.fromString("psImages/PANO_20141225_160432.jpg");
+            var source = Marzipano.ImageUrlSource.fromString("panoImages/PANO_20141225_160432.jpg");
 
             var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500*Math.PI/180);
             var view = new Marzipano.RectilinearView(null, limiter);
