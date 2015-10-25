@@ -32,13 +32,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,300italic' rel='stylesheet' type='text/css'> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../fonts/stylesheet.css" type="text/css" charset="utf-8" />
 
     <!-- MDL and custom CSS/JS -->
     <link rel="stylesheet" href="../material.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
     <!-- <link rel="stylesheet" type="text/css" href="../reset.css"> -->
-    <script src="/material.min.js"></script>
+    <script src="../material.min.js"></script>
 
     <!-- Marzipano stuff -->
     <script src="es5-shim.js"></script>
@@ -51,64 +51,67 @@
 
 	</head>
     <body>
-        
-            <div id="leftPane"></div>
-            <div id="rightPane">
-                <h2 class="sidebarTitle">Photo Spheres</h2>
-                <div id="cardContainer">
-                    <div class="mdl-card mdl-card--shadow-4dp">
-                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
-                            <h2 class="mdl-card__title-text">Latest PS</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
-                      </div>
-                      <div class="mdl-card mdl-card--shadow-4dp">
-                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
-                            <h2 class="mdl-card__title-text">Latest PS</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
-                      </div>
-                      <div class="mdl-card mdl-card--shadow-4dp">
-                        <div class="mdl-card__title" style="background: url('psImages/PANO_20141225_160432.jpg') center / cover;">
-                            <h2 class="mdl-card__title-text">Latest PS</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">This one here is from Mt Baker Beach.</div>                    
-                      </div>
-                </div>
-            </div>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+            <header class="mdl-layout__header" id="header">
+                <div class="mdl-layout__header-row">
+                    <div class="mdl-layout-spacer"></div>
+                    <i class="material-icons">navigate_before</i>
+                    <div class="mdl-layout-spacer"></div>
+                    <span class="mdl-layout-title">Photosphere Name</span>
+                    <i class="mdl-layout-spacer"></i>
+                    <i class="material-icons">navigate_next</i>
+                    <div class="mdl-layout-spacer"></div>
 
-        <!-- <div id="mainPano"></div> -->
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Photo Spheres</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="#"></a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content" id="">
+                <div id="panoOuter">
+                    <div id="panoPane"></div>
+                </div>
+            </main>
+        </div>
 
 
 
         <script type="text/javascript">
-            var Marzipano = window.Marzipano;
+            var Pannonating = (function() {
 
-            var panoElement = document.getElementById('leftPane');
-            var viewerOpts = {
-                swfPath: 'marzipano.swf',
-                controls: {
-                    mouseViewMode: 'drag'
-                }
-            };
+                var Marzipano = window.Marzipano;
 
-            var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
+                var panoElement = document.getElementById('panoPane');
+                var viewerOpts = {
+                    swfPath: 'marzipano.swf',
+                    controls: {
+                        mouseViewMode: 'drag'
+                    }
+                };
+
+                var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
 
 
 
-            var geometry = new Marzipano.EquirectGeometry([{ width: 6656 }]);
-            var source = Marzipano.ImageUrlSource.fromString("psImages/PANO_20141225_160432.jpg");
+                var geometry = new Marzipano.EquirectGeometry([{ width: 6656 }]);
+                var source = Marzipano.ImageUrlSource.fromString("psImages/PANO_20141225_160432.jpg");
 
-            var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500*Math.PI/180);
-            var view = new Marzipano.RectilinearView(null, limiter);
+                var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500 * Math.PI / 180);
+                var view = new Marzipano.RectilinearView(null, limiter);
 
-            var scene = viewer.createScene({
-              source: source,
-              geometry: geometry,
-              view: view
-            });
+                var scene = viewer.createScene({
+                    source: source,
+                    geometry: geometry,
+                    view: view
+                });
 
-            scene.switchTo();
+                scene.switchTo();
+            })();
+
+
         </script>
     </body>
 

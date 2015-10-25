@@ -1,0 +1,12 @@
+#panoPane {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+#panoOuter {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
