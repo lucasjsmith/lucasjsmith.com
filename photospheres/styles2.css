@@ -29,6 +29,10 @@
 	color: white;
 }
 
+.mdl-layout__drawer-button > .material-icons {
+	margin-top: 12px;
+}
+
 /*.mdl-navigation {
 	padding-top: 0px !important;
 }*/
