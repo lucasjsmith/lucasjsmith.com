@@ -1,37 +1,38 @@
-body {
-	margin: 0;
-}
-
-#mainPano {
+#panoPane {
+	position: absolute;
 	height: 100%;
 	width: 100%;
 }
 
-#leftPane {
-	display: inline-block;
-	float: left;
-	background: gray;
+#panoOuter {
+	overflow: hidden;
 	height: 100%;
-	width: 80%;
+	width: 100%;
+	position: relative;
 }
 
-#rightPane {
-	float: right;
-	display: inline-block;
-	background: green;
-	height: 100%;
-	width: 20%;
-	overflow-y: auto; 
-}
-#cardContainer {
-
-	overflow-y:auto;
+.sideDrawer {
+	border-color: black;
 }
 
-#rightPane .mdl-card {
-	margin: 4px;
+.panoChoiceCard {
+	cursor: pointer;
+	width: 225px;
+/*	margin-left: auto;
+	margin-right: auto;*/
+	min-height: 0;
+	margin: 8px auto;
 }
 
-.mdl-card .mdl-card__title {
-	  height: 150px;
+.panoChoiceCard > .mdl-card__title {
+	height: 130px;
+	color: white;
 }
+
+.mdl-layout__drawer-button > .material-icons {
+	margin-top: 12px;
+}
+
+/*.mdl-navigation {
+	padding-top: 0px !important;
+}*/
