@@ -8,25 +8,25 @@
 	<title>Photo Spheres | LucasJSmith.com</title>
 
 	<!-- Favicons and stuff -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="apple-mobile-web-app-title" content="Photo Spheres | LucasJSmith.com">
-    <meta name="application-name" content="Photo Spheres | LucasJSmith.com">
-    <meta name="msapplication-TileColor" content="#5f9ad2">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#5f9ad2">
+    <link rel="apple-touch-icon" sizes="57x57" href="../apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16">
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <!-- <meta name="apple-mobile-web-app-title" content="Photo Spheres | LucasJSmith.com"> -->
+    <!-- <meta name="application-name" content="Photo Spheres | LucasJSmith.com"> -->
+    <!-- <meta name="msapplication-TileColor" content="#5f9ad2"> -->
+    <!-- <meta name="msapplication-TileImage" content="/mstile-144x144.png"> -->
+    <!-- <meta name="theme-color" content="#5f9ad2"> -->
 
     <!-- Roboto + Material Icons for MDL, Lato for Transit Lens, Mission Gothic for title -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
@@ -46,8 +46,6 @@
     <script src="eventShim.js"></script>
     <script src="rAF.js" ></script>
     <script src="marzipano.js"></script>
-
-
 
 
 	</head>
@@ -88,6 +86,7 @@
 
 
         <script type="text/javascript">
+            //INITIAL MARZIPANO SETUP
             var Marzipano = window.Marzipano;
 
             var panoElement = document.getElementById('panoPane');
@@ -99,6 +98,14 @@
             };
 
             var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
+
+            //INITIAL FUN SETUP
+            var currentPanoNumber = 17
+
+            updateScene(6656, "panoImages/PANO_20141225_160432.jpg", "Mt. Baker Beach");
+
+            document.getElementById("hdrLast").addEventListener("click", function(){goTo("previous")});
+            document.getElementById("hdrNext").addEventListener("click", function(){goTo("next")})
 
         // Find active pano info from activePanoIds and send to sidebar
         for (j=0; j <activePanoIds.length; j++) {
@@ -133,9 +140,9 @@
 
         // Switch to pano (takes card ID i.e. panoChoice8)
         function switchToPano(panoChoiceNumber) {
-            number = panoChoiceNumber.substring(10,panoChoiceNumber.length);
+            currentPanoNumber = panoChoiceNumber.substring(10,panoChoiceNumber.length);
             for (i=0; i < panoList.length; i++) {
-                if (panoList[i].number == number) {
+                if (panoList[i].number == currentPanoNumber) {
                     updateScene(panoList[i].width, "panoImages/" + panoList[i].filename, panoList[i].location);
                 }
             }
@@ -158,11 +165,23 @@
 
             document.getElementById("currentTitle").innerHTML = "&nbsp;" + location;
         }
-        
-        updateScene(6656, "panoImages/PANO_20141225_160432.jpg", "Mt. Baker Beach");
 
 
-
+        function goTo(which) {
+            var currIndex = null;
+            for (i = 0; i < activePanoIds.length; i++) {
+                if (activePanoIds[i] == currentPanoNumber) {
+                    currIndex = i;
+                }
+            }
+            if (which == "previous" && currIndex + 1  < activePanoIds.length) {
+                panoChoiceNumber = "panoChoice" + activePanoIds[currIndex +1];
+                switchToPano(panoChoiceNumber);
+            } else if (which == "next" && currIndex > 0){
+                panoChoiceNumber = "panoChoice" + activePanoIds[currIndex - 1];
+                switchToPano(panoChoiceNumber);
+            }
+        }
         </script>
     </body>
 
