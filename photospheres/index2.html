@@ -61,7 +61,7 @@
                     </button>
                     <div class="mdl-layout-spacer"></div>
                     <i class="material-icons">place</i>
-                    <span class="mdl-layout-title currentTitle">&nbsp;Mt. Baker Beach</span>
+                    <span class="mdl-layout-title currentTitle" id="currentTitle">&nbsp;Mt. Baker Beach</span>
                     <i class="mdl-layout-spacer"></i>
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrNext">
                         <i class="material-icons">navigate_next</i>
@@ -74,53 +74,7 @@
                 <span class="mdl-layout-title">Photo Spheres</span>
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href="http://lucasjsmith.com">Back to LucasJSmith.com</a>
-                    <span id="panoChoiceWrapper">
-<!--                         <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
-                            <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
-                                <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                Christmas Day 2014
-                            </div>
-                        </div>
-                        <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
-                            <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
-                                <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                Christmas Day 2014
-                            </div>
-                        </div>
-                        <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
-                            <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
-                                <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
-                            </div>
-
-                        </div>
-                        <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
-                            <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
-                                <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                Christmas Day 2014
-                            </div>
-                        </div>
-                        <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
-                            <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
-                                <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                Christmas Day 2014
-                            </div>
-                        </div>
-                        <div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice17">
-                            <div class="mdl-card__title" style="background: url(panoImages/PANO_20141225_160432.jpg) center/cover">
-                                <h2 class="mdl-card__title-text">Mt. Baker Beach</h2>
-                            </div>
-                            <div class="mdl-card__supporting-text">
-                                Christmas Day 2014
-                            </div>
-                        </div> -->
+                    <span id="panoChoiceWrapper">                         
                     </span>
                 </nav>
             </div>
@@ -134,37 +88,17 @@
 
 
         <script type="text/javascript">
-            var StartPano = (function() {
+            var Marzipano = window.Marzipano;
 
-                var Marzipano = window.Marzipano;
+            var panoElement = document.getElementById('panoPane');
+            var viewerOpts = {
+                swfPath: 'marzipano.swf',
+                controls: {
+                    mouseViewMode: 'drag'
+                }
+            };
 
-                var panoElement = document.getElementById('panoPane');
-                var viewerOpts = {
-                    swfPath: 'marzipano.swf',
-                    controls: {
-                        mouseViewMode: 'drag'
-                    }
-                };
-
-                var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
-
-
-
-                var geometry = new Marzipano.EquirectGeometry([{ width: 6656 }]);
-                var source = Marzipano.ImageUrlSource.fromString("panoImages/PANO_20141225_160432.jpg");
-
-                var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500 * Math.PI / 180);
-                var view = new Marzipano.RectilinearView(null, limiter);
-
-                var scene = viewer.createScene({
-                    source: source,
-                    geometry: geometry,
-                    view: view
-                });
-
-                scene.switchTo();
-            })();
-
+            var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
 
         // Find active pano info from activePanoIds and send to sidebar
         for (j=0; j <activePanoIds.length; j++) {
@@ -179,7 +113,7 @@
 
         // Add given panorama to sidebar
         function addPanoToSidebar(number, title, blurb, filename){
-            var cardHTML = '<div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice' + number +'">                     <div class="mdl-card__title" style="background: url(panoImages/' + filename + ') center/cover"><h2 class="mdl-card__title-text">' + title + '</h2></div>';
+            var cardHTML = '<div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice' + number +'">                     <div class="mdl-card__title" style="background: url(panoImages/thumbs/' + filename + ') center/cover"><h2 class="mdl-card__title-text">' + title + '</h2></div>';
             if (blurb) {
                 cardHTML = cardHTML + '<div class="mdl-card__supporting-text">' + blurb + '</div></div>';
             } else {
@@ -200,9 +134,32 @@
         // Switch to pano (takes card ID i.e. panoChoice8)
         function switchToPano(panoChoiceNumber) {
             number = panoChoiceNumber.substring(10,panoChoiceNumber.length);
-            console.log(number);
+            for (i=0; i < panoList.length; i++) {
+                if (panoList[i].number == number) {
+                    updateScene(panoList[i].width, "panoImages/" + panoList[i].filename, panoList[i].location);
+                }
+            }
         }
 
+        function updateScene(width,source,location) {
+            var geometry = new Marzipano.EquirectGeometry([{ width: width }]);
+            var source = Marzipano.ImageUrlSource.fromString(source);
+
+            var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500 * Math.PI / 180);
+            var view = new Marzipano.RectilinearView(null, limiter);
+
+            var scene = viewer.createScene({
+                source: source,
+                geometry: geometry,
+                view: view
+            });
+
+            scene.switchTo();
+
+            document.getElementById("currentTitle").innerHTML = "&nbsp;" + location;
+        }
+        
+        updateScene(6656, "panoImages/PANO_20141225_160432.jpg", "Mt. Baker Beach");
 
 
 
