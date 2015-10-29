@@ -102,7 +102,7 @@
             //INITIAL FUN SETUP
             var currentPanoNumber = 17
 
-            updateScene(6656, "panoImages/4096/PANO_20141225_160432.jpg", "Mt. Baker Beach");
+            updateScene(4096, "panoImages/4096/PANO_20141225_160432.jpg", "Mt. Baker Beach");
 
             document.getElementById("hdrLast").addEventListener("click", function(){goTo("previous")});
             document.getElementById("hdrNext").addEventListener("click", function(){goTo("next")})
@@ -143,13 +143,15 @@
             currentPanoNumber = panoChoiceNumber.substring(10,panoChoiceNumber.length);
             for (i=0; i < panoList.length; i++) {
                 if (panoList[i].number == currentPanoNumber) {
-                    updateScene(panoList[i].width, "panoImages/4096/" + panoList[i].filename, panoList[i].location);
+                    // updateScene(panoList[i].width, "panoImages/" + panoList[i].filename, panoList[i].location);
+                    updateScene(4096, "panoImages/4096/" + panoList[i].filename, panoList[i].location);
                 }
             }
         }
 
         function updateScene(width,source,location) {
-            var geometry = new Marzipano.EquirectGeometry([{ width: 4096 }]);
+            // var geometry = new Marzipano.EquirectGeometry([{ width: width }]);
+            var geometry = new Marzipano.EquirectGeometry([{ width: 4000 }]);
             var source = Marzipano.ImageUrlSource.fromString(source);
 
             var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500 * Math.PI / 180);
