@@ -208,6 +208,9 @@ body .ljsc {
   line-height: 1;
 }
 
+.supporting-text-low-height {
+  min-height: 0 !important;
+}
 .ljsc .mini-bio .mdl-card__media {
   background-image: url('images/ljs-cover.jpg');
 }
@@ -238,6 +241,9 @@ body .ljsc {
   height: 38px;
   transform: translateY(-5px);
   padding-right: 5px;
+}
+.ljsc .transitlens-card a i {
+  transform: translateY(2px);
 }
 
 .ljsc .photospheres-card .mdl-card__media {
@@ -344,3 +350,4 @@ body .ljsc {
   align-items: center;
   box-sizing: border-box;
 }
+
