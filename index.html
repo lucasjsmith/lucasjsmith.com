@@ -165,25 +165,28 @@
 
         <footer class="mdl-mini-footer">
           <div class="mdl-mini-footer--left-section">
-            <button class="mdl-mini-footer--social-btn social-btn social-btn__linkedin">
+            <button id="ttLinkedIn" class="mdl-mini-footer--social-btn social-btn social-btn__linkedin">
               <a href="http://linkedin.com/in/lucasjsmith">
                 <span class="visuallyhidden">LinkedIn</span>
                 <img src="images/linkedin-box.png">
               </a>
             </button>
-            <button class="mdl-mini-footer--social-btn social-btn social-btn__github">
+            <div class="mdl-tooltip" for="ttLinkedIn">LinkedIn</div>
+            <button id="ttGitHub" class="mdl-mini-footer--social-btn social-btn social-btn__github">
               <a href="https://github.com/lucasjsmith/">
                 <span class="visuallyhidden">GitHub</span>
                 <img src="images/github-box.png">
               </a>            
             </button>
-            <button class="mdl-mini-footer--social-btn social-btn social-btn__email">
+            <div class="mdl-tooltip" for="ttGitHub">GitHub</div>
+            <button id="ttEmail" class="mdl-mini-footer--social-btn social-btn social-btn__email">
               <a href="mailto:hi@lucasjsmith.com">
                 <span class="visuallyhidden">Email</span>
                 <img src="images/email.png">
               </a>            
             </button>
           </div>
+          <div class="mdl-tooltip" for="ttEmail">Email</div>
         </footer>
       </main>
       <div class="mdl-layout__obfuscator"></div>
