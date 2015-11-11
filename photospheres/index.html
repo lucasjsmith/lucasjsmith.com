@@ -86,6 +86,9 @@
 
 
         <script type="text/javascript">
+            //Constants
+            var urlSchemaVersion = "1";
+
             //INITIAL MARZIPANO SETUP
             var Marzipano = window.Marzipano;
 
@@ -100,90 +103,130 @@
             var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
 
             //INITIAL FUN SETUP
-            var currentPanoNumber = 17
 
-            updateScene(4096, "panoImages/4096/PANO_20141225_160432.jpg", "Mt. Baker Beach");
+            var currentPanoNumber = 17
+            initialURLcheck();
+
+            switchToPano("panoChoice" + currentPanoNumber);
 
             document.getElementById("hdrLast").addEventListener("click", function(){goTo("previous")});
             document.getElementById("hdrNext").addEventListener("click", function(){goTo("next")})
 
-        // Find active pano info from activePanoIds and send to sidebar
-        for (j=0; j <activePanoIds.length; j++) {
-            var match = false;
-            for (i=0; i < panoList.length; i++) {
-                if ((panoList[i].number == activePanoIds[j]) && (match == false)) {
-                    addPanoToSidebar(panoList[i].number,panoList[i].title,panoList[i].blurb,panoList[i].filename);
-                    match = true;
+            findAndAddActivePanos();
+
+            // Find active pano info from activePanoIds and send to sidebar
+            function findAndAddActivePanos() {
+                for (j=0; j <activePanoIds.length; j++) {
+                    var match = false;
+                    for (i=0; i < panoList.length; i++) {
+                        if ((panoList[i].number == activePanoIds[j]) && (match == false)) {
+                            addPanoToSidebar(panoList[i].number,panoList[i].title,panoList[i].blurb,panoList[i].filename);
+                            match = true;
+                        }
+                    }
                 }
             }
-        }
 
-        // Add given panorama to sidebar
-        function addPanoToSidebar(number, title, blurb, filename){
-            var cardHTML = '<div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice' + number +'">                     <div class="mdl-card__title" style="background: url(panoImages/thumbs/' + filename + ') center/cover"><h2 class="mdl-card__title-text">' + title + '</h2></div>';
-            if (blurb) {
-                cardHTML = cardHTML + '<div class="mdl-card__supporting-text">' + blurb + '</div></div>';
-            } else {
-                cardHTML = cardHTML + '</div>';
+            // Add given panorama to sidebar
+            function addPanoToSidebar(number, title, blurb, filename){
+                var cardHTML = '<div class="mdl-card mdl-shadow--2dp panoChoiceCard" id="panoChoice' + number +'">                     <div class="mdl-card__title" style="background: url(panoImages/thumbs/' + filename + ') center/cover"><h2 class="mdl-card__title-text">' + title + '</h2></div>';
+                if (blurb) {
+                    cardHTML = cardHTML + '<div class="mdl-card__supporting-text">' + blurb + '</div></div>';
+                } else {
+                    cardHTML = cardHTML + '</div>';
+                }
+
+                document.getElementById("panoChoiceWrapper").innerHTML = cardHTML + document.getElementById("panoChoiceWrapper").innerHTML;
             }
 
-            document.getElementById("panoChoiceWrapper").innerHTML = cardHTML + document.getElementById("panoChoiceWrapper").innerHTML;
-        }
+            // add click listeners to sidebar panoChoices (TODO - integerate to add to sidebar)
+            for (j=0; j < activePanoIds.length; j++) {
+                var panoNumber = activePanoIds[j];
+                var cardId = "panoChoice" + panoNumber;
+                var card = document.getElementById(cardId);
+                card.addEventListener("click", function() {switchToPano(this.getAttribute("id"));});
+            }
 
-        // add click listeners to sidebar panoChoices (TODO - integerate to add to sidebar)
-        for (j=0; j < activePanoIds.length; j++) {
-            var panoNumber = activePanoIds[j];
-            var cardId = "panoChoice" + panoNumber;
-            var card = document.getElementById(cardId);
-            card.addEventListener("click", function() {switchToPano(this.getAttribute("id"));});
-        }
+            // Switch to pano (takes card ID i.e. "panoChoice8")
+            function switchToPano(panoChoiceNumber) {
+                currentPanoNumber = panoChoiceNumber.substring(10,panoChoiceNumber.length);
+                for (i=0; i < panoList.length; i++) {
+                    if (panoList[i].number == currentPanoNumber) {
+                        // updateScene(panoList[i].width, "panoImages/" + panoList[i].filename, panoList[i].location);
+                        updateScene(4096, "panoImages/4096/" + panoList[i].filename, panoList[i].location);
+                    }
+                }
+                // Update URL hash portion
+                var newURLbit = urlSchemaVersion + "." + currentPanoNumber;
+                window.history.replaceState(null,null, "#" + newURLbit);
 
-        // Switch to pano (takes card ID i.e. panoChoice8)
-        function switchToPano(panoChoiceNumber) {
-            currentPanoNumber = panoChoiceNumber.substring(10,panoChoiceNumber.length);
-            for (i=0; i < panoList.length; i++) {
-                if (panoList[i].number == currentPanoNumber) {
-                    // updateScene(panoList[i].width, "panoImages/" + panoList[i].filename, panoList[i].location);
-                    updateScene(4096, "panoImages/4096/" + panoList[i].filename, panoList[i].location);
+            }
+
+            // dirty work of interfacing with Marzipano to update displayed sphere
+            function updateScene(width,source,location) {
+                var geometry = new Marzipano.EquirectGeometry([{ width: width }]);
+                // var geometry = new Marzipano.EquirectGeometry([{ width: 4000 }]);
+                var source = Marzipano.ImageUrlSource.fromString(source);
+
+                var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500 * Math.PI / 180);
+                var view = new Marzipano.RectilinearView(null, limiter);
+
+                var scene = viewer.createScene({
+                    source: source,
+                    geometry: geometry,
+                    view: view
+                });
+
+                scene.switchTo();
+
+                document.getElementById("currentTitle").innerHTML = "&nbsp;" + location;
+            }
+
+            // Interprets input URL (#) 
+            function initialURLcheck() {
+                var url = document.URL;
+                console.log(url);
+                if (url.indexOf("#") > -1) {
+                    var token = url.substring(url.indexOf("#")+1, url.length);
+                    if (token.indexOf(".") > -1) {
+                        var tokenSchemaVersion = token.substring(0,token.indexOf("."));
+                        var tokenPanoNumber = token.substring(token.indexOf(".") +1 , token.length);
+                        console.log(tokenSchemaVersion);
+                        console.log(tokenPanoNumber);
+                        // TODO resume here, check ints, load corresponding pano
+                        if ((parseInt(tokenSchemaVersion) == 1) && (contains(activePanoIds, parseInt(tokenPanoNumber)) ) ) {
+                            currentPanoNumber = tokenPanoNumber;
+                        }
+                    }
+
                 }
             }
-        }
 
-        function updateScene(width,source,location) {
-            // var geometry = new Marzipano.EquirectGeometry([{ width: width }]);
-            var geometry = new Marzipano.EquirectGeometry([{ width: 4000 }]);
-            var source = Marzipano.ImageUrlSource.fromString(source);
-
-            var limiter = Marzipano.RectilinearView.limit.maxResolutionAndMaxFov(2048, 500 * Math.PI / 180);
-            var view = new Marzipano.RectilinearView(null, limiter);
-
-            var scene = viewer.createScene({
-                source: source,
-                geometry: geometry,
-                view: view
-            });
-
-            scene.switchTo();
-
-            document.getElementById("currentTitle").innerHTML = "&nbsp;" + location;
-        }
-
-
-        function goTo(which) {
-            var currIndex = null;
-            for (i = 0; i < activePanoIds.length; i++) {
-                if (activePanoIds[i] == currentPanoNumber) {
-                    currIndex = i;
+            // onclick of nex/prev buttons
+            function goTo(which) {
+                var currIndex = null;
+                for (i = 0; i < activePanoIds.length; i++) {
+                    if (activePanoIds[i] == currentPanoNumber) {
+                        currIndex = i;
+                    }
+                }
+                if (which == "previous" && currIndex + 1  < activePanoIds.length) {
+                    panoChoiceNumber = "panoChoice" + activePanoIds[currIndex +1];
+                    switchToPano(panoChoiceNumber);
+                } else if (which == "next" && currIndex > 0){
+                    panoChoiceNumber = "panoChoice" + activePanoIds[currIndex - 1];
+                    switchToPano(panoChoiceNumber);
                 }
             }
-            if (which == "previous" && currIndex + 1  < activePanoIds.length) {
-                panoChoiceNumber = "panoChoice" + activePanoIds[currIndex +1];
-                switchToPano(panoChoiceNumber);
-            } else if (which == "next" && currIndex > 0){
-                panoChoiceNumber = "panoChoice" + activePanoIds[currIndex - 1];
-                switchToPano(panoChoiceNumber);
+
+            function contains(a, obj) {
+                for (var i = 0; i < a.length; i++) {
+                    if (a[i] === obj) {
+                        return true;
+                    }
+                }
+                return false;
             }
-        }
         </script>
     </body>
 
