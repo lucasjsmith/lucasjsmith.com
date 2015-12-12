@@ -1,0 +1,81 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Lucas J Smith's Photo Spheres">
+		<title>Spherical Image | LucasJSmith.com</title>
+
+		<!-- Favicons and stuff -->
+	    <link rel="apple-touch-icon" sizes="57x57" href="../apple-touch-icon-57x57.png">
+	    <link rel="apple-touch-icon" sizes="60x60" href="../apple-touch-icon-60x60.png">
+	    <link rel="apple-touch-icon" sizes="72x72" href="../apple-touch-icon-72x72.png">
+	    <link rel="apple-touch-icon" sizes="76x76" href="../apple-touch-icon-76x76.png">
+	    <link rel="apple-touch-icon" sizes="114x114" href="../apple-touch-icon-114x114.png">
+	    <link rel="apple-touch-icon" sizes="120x120" href="../apple-touch-icon-120x120.png">
+	    <link rel="apple-touch-icon" sizes="144x144" href="../apple-touch-icon-144x144.png">
+	    <link rel="apple-touch-icon" sizes="152x152" href="../apple-touch-icon-152x152.png">
+	    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon-180x180.png">
+	    <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32">
+	    <link rel="icon" type="image/png" href="../android-chrome-192x192.png" sizes="192x192">
+	    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+	    <link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16">
+		</head>    
+		<meta charset="utf-8">	
+	<body>
+		<style type="text/css">
+			body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				background: black;
+				overflow: hidden;
+				color: white;
+				font-family: sans-serif;
+			}
+			.ricoh-theta-iframe {
+				width: 100%;
+				height: 100%;
+			}
+			#wrapper {
+				margin: 0;
+				height: 0;
+				color: black;
+				height: 100%;
+				width: 100%;
+			}
+			#message {
+			    left: 0;
+			    line-height: 200px;
+			    margin-top: -100px;
+			    position: absolute;
+			    text-align: center;
+			    top: 20%;
+			    width: 100%;
+			}
+		</style>
+		<div id="wrapper">
+			<div id="message">Loading...</div>
+		</div>
+
+
+		<script>
+			initialURLcheck();
+			// grab URL token, set the gears in motion.
+			function initialURLcheck() {
+                var url = document.URL;
+                if (url.indexOf("#") > -1) {
+                    var token = url.substring(url.indexOf("#")+1, url.length);
+                    document.getElementById("message").innerHTML="Loading image...";
+                    document.getElementById("wrapper").innerHTML='<blockquote data-width="100%" data-height="100%" class="ricoh-theta-spherical-image" >Post from RICOH THETA. - <a href="https://theta360.com/s/' + token + '" target="_blank">Spherical Image - RICOH THETA</a></blockquote>'                }
+                else {
+                	document.getElementById("message").innerHTML="No image specified. Check URL."
+                }
+            }           
+            
+		</script>
+
+		<script  src="https://theta360.com/widgets.js" charset="utf-8"></script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trojan Vision Tour</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes ">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="#" class="scene" data-id="0-studio-c">
+        <li class="text">Studio C</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="1-studio-b---cuusc-set">
+        <li class="text">Studio B - CU@USC Set</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="2-control-room">
+        <li class="text">Control Room</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="3-studio-b-hallway">
+        <li class="text">Studio B Hallway</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="4-master-control">
+        <li class="text">Master Control</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="5-tech-ops">
+        <li class="text">Tech Ops</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="6-studio-c-hallway">
+        <li class="text">Studio C Hallway</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="7-conference-room">
+        <li class="text">Conference Room</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="8-front-hallway">
+        <li class="text">Front Hallway</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="9-entry">
+        <li class="text">Entry</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="10-audio-booth">
+        <li class="text">Audio Booth</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="11-foyer">
+        <li class="text">Foyer</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="12-trojan-vision-office">
+        <li class="text">Trojan Vision Office</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="13-equipment-room">
+        <li class="text">Equipment Room</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="14-office-hallway">
+        <li class="text">Office Hallway</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="15-lounge">
+        <li class="text">Lounge</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="16-editing-room">
+        <li class="text">Editing Room</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="#" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="#" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="#" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="#" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="#" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="#" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="#" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="#" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="#" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/es5-shim.js"></script>
+<script src="vendor/eventShim.js"></script>
+<script src="vendor/classList.js"></script>
+<script src="vendor/requestAnimationFrame.js" ></script>
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

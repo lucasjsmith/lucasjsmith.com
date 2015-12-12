@@ -33,6 +33,10 @@
 	margin-top: 12px;
 }
 
+.mdl-layout__header-row {
+	overflow: auto;
+}
+
 /*.mdl-navigation {
 	padding-top: 0px !important;
 }*/
