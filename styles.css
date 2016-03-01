@@ -188,7 +188,7 @@ body .ljsc {
   #292724 .57em .57em 0,
   #292724 .58em .58em 0, 
   #292724 .59em .59em 0, 
-  #292724 .60em .60em 0,
+  #292724 .60em .60em 0
 /* #29272400 .61em .61em 0, 
   #292724 .62em .62em 0, 
   #292724 .63em .63em 0, 
@@ -289,6 +289,13 @@ body .ljsc {
 .card-short > .mdl-card__actions,
 .card-short > .mdl-card__actions > .mdl-button {
   color: #fff;
+}
+
+.mdl-card__actions-slimtop {
+  padding-top: 0;
+}
+.mdl-card__actions-slimbottom {
+  padding-bottom: 0;
 }
 
 .ljsc .mdl-card > a {
