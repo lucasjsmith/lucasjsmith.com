@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<title>Hide Headers Bookmarklet</title>
+	</head>
+
+	<body>
+		<p>Makes the header scroll on MLS Live &amp; Fox Sports Go</p>
+		<p>Drag bookmarklet to bookmark bar: (then click it when you're on the video player page)</p>
+		<p class="bookmarklet"><a href="javascript:try{console.log(document.getElementById('header_fixed').style.position='inherit');}catch(e){}try{console.log(document.querySelector('.navbar-fixed-top').style.position='relative');}catch(e){}"> &#9917;Heads</a></p>
+		<p>Last updated: 6/18/16 to include Fox Sports Go. Tested on MLSL &amp; FSGo on latest Chrome on Mac only.</p>
+	</body>
+	<style type="text/css">
+		.bookmarklet {
+			background: lightgrey;
+			width: 100px;
+			text-align: center;
+			border-radius: 5;
+			padding: 5px;
+		}
+
+		body{
+		    font-family: sans-serif;
+			color: #333333;
+			background-color: #ffffff;
+			width: 600px;
+    		margin:40px auto;
+		}
+		a{
+			font-weight:bold;
+			text-decoration:none;
+			color: #2780e3;
+		}
+		a:link, a:visited, a:active{
+		    font-weight:bold;
+			text-decoration:none;
+			color: #2780e3;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+
+	</style>
+</html>
