@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>LL Answer Reveal Bookmarklet</title>
+  </head>
+
+  <body>
+    <p>Reveals all six answers on a LearnedLeague Match Day Results page (e.g. <a href="http://learnedleague.com/match.php?72&25">http://learnedleague.com/match.php?72&amp;25</a>) in one click.</p>
+    <p>Drag bookmarklet to bookmark bar: (then click it when you're on the match day page)</p>
+    <p class="bookmarklet"><a href="javascript:RemoveContent('Q11');javascript:InsertContent('Q11ANS');
+    javascript:RemoveContent('Q21');javascript:InsertContent('Q21ANS');
+    javascript:RemoveContent('Q31');javascript:InsertContent('Q31ANS');
+    javascript:RemoveContent('Q41');javascript:InsertContent('Q41ANS');
+    javascript:RemoveContent('Q51');javascript:InsertContent('Q51ANS');
+    javascript:RemoveContent('Q61');javascript:InsertContent('Q61ANS');"> LL-Answers</a></p>
+    <p>Last updated: 3/28/17 initial version.</p>
+  </body>
+  <style type="text/css">
+    .bookmarklet {
+      background: lightgrey;
+      width: 100px;
+      text-align: center;
+      border-radius: 5;
+      padding: 5px;
+    }
+
+    body{
+        font-family: sans-serif;
+      color: #333333;
+      background-color: #ffffff;
+      width: 600px;
+        margin:40px auto;
+    }
+    a{
+      font-weight:bold;
+      text-decoration:none;
+      color: #2780e3;
+    }
+    a:link, a:visited, a:active{
+        font-weight:bold;
+      text-decoration:none;
+      color: #2780e3;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+
+  </style>
+</html>
