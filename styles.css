@@ -349,6 +349,9 @@ body .ljsc {
 .social-btn__email {
   background-image: url('images/email.png');
 }
+.social-btn__bits {
+  background-image: url('images/more_horiz.png');
+}
 
 .ljsc .mdl-mini-footer {
   margin-top: 80px;
