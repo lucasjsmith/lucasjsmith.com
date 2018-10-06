@@ -1,4 +1,44 @@
+# Lucas specified Items:
+
 temp*/
 OaklandALPR/
 demo-reel/
 .well-known/
+pav/index.html
+kirby/
+assets/fonts/
+panel/
+
+
+# Kirby specified items:
+
+# System files
+# ------------
+
+Icon
+.DS_Store
+
+# Temporary files
+# ---------------
+
+/thumbs/*
+!/thumbs/index.html
+
+/site/cache/*
+!/site/cache/index.html
+
+# -------------SECURITY-------------
+# NEVER publish these files via Git!
+# -------------SECURITY-------------
+
+# Kirby accounts
+# ---------------
+
+/site/accounts/*
+!/site/accounts/index.html
+
+# Avatars
+# ---------------
+
+/assets/avatars/*
+!/assets/avatars/index.html

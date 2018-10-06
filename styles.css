@@ -211,6 +211,8 @@ body .ljsc {
 .supporting-text-low-height {
   min-height: 0 !important;
 }
+
+/* Bio card*/
 .ljsc .mini-bio .mdl-card__media {
   background-image: url('images/ljs-cover.jpg');
 }
@@ -218,6 +220,19 @@ body .ljsc {
   font-size: 16px;
 }
 
+/*Work card*/
+.ljsc .work-card .mdl-card__media {
+  background-image: url('images/171117_LRV4_Launch_181.jpg');
+  color: white;
+}
+
+/*blog card*/
+.ljsc .blog-card .mdl-card__media {
+  background-image: url('images/sf_ferry.jpg');
+  color: white;
+}
+
+/*Transit Lens Card*/
 .ljsc .transitlens-card .mdl-card__media {
   background-image: url('images/transitlens-cover.png');
   display: flex;
@@ -242,10 +257,11 @@ body .ljsc {
   transform: translateY(-5px);
   padding-right: 5px;
 }
-.ljsc .transitlens-card a i {
-  transform: translateY(2px);
+.ljsc .mdl-card__actions a i {
+  transform: translateY(3px);
 }
 
+/*Photosphere card*/
 .ljsc .photospheres-card .mdl-card__media {
   background-image: url('images/photospheres-cover.png');
   color: white;
@@ -255,6 +271,7 @@ body .ljsc {
   font-size: 16px;
 }
 
+/*Mind Games Card*/
 .ljsc .mind-games-card .mdl-card__media {
   background-image: url('images/mindgames-cover.png');
   color: white;
@@ -263,6 +280,7 @@ body .ljsc {
   background-color: rgba(0,0,0,0.2);
 }
 
+/*Resume, Contact, Twitter cards*/
 .resume-card.mdl-card {
   background: #01579B;
 }

@@ -1,0 +1,9 @@
+Title: Work
+
+----
+
+Text: As a transit planner and expert in Passenger Information Systems, I have presented at conferences and such. This page will house slides & content from those presentations.
+
+----
+
+Perpage: 3

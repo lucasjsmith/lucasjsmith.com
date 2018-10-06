@@ -1,0 +1,15 @@
+Title: Content
+
+----
+
+Intro: 
+
+----
+
+Text: 
+
+## Work
+
+## Blog
+
+(link: /blog text:Stuff that's more fun)
