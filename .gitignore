@@ -8,6 +8,9 @@ pav/index.html
 kirby/
 assets/fonts/
 panel/
+content/
+content
+# !content/home/
 
 
 # Kirby specified items:

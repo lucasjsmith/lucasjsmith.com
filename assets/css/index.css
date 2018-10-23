@@ -291,6 +291,25 @@ figcaption {
   clear: both;
 }
 
+/* Responsive video size ^ls */
+
+.video {
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+}
+
+.video iframe, .video object, .video embed {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+
 /* -----  2.1 Kirbytext  ---------------------------------------------------- */
 
 .intro {
@@ -445,18 +464,28 @@ h1 + .intro {
 .wrap {
   box-sizing: content-box;
   /*margin: 0 auto;*/
-  margin-left: 5rem;
+  /*margin-left: 5rem;*/
   padding-left: .75rem;
   padding-right: .75rem;
   max-width: 40rem;
 }
 
+/*.wrap::before {
+    content: '';
+    width: 10%;
+    min-width: 100px;
+    max-width: 200px;
+    display: inline-block;
+}*/
+
 .wrap.wide {
   max-width: 48rem;
+  /*margin-left: 5rem;*/
 }
 
 @media all and (min-width: 31.5em) {
-  .wrap:not(.wide) {
+  /*.wrap:not(.wide) {*/
+  .wrap {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -464,12 +493,14 @@ h1 + .intro {
 
 @media all and (min-width: 38.25em) {
   .wrap {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: 5rem;
   }
   .wrap.wide {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    /*margin-left: 5rem;*/
   }
 }
 
