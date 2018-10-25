@@ -556,10 +556,10 @@ h1 + .intro {
   background: transparent;
 }
 
-@media all and (min-width: 75em) {
+/*@media all and (min-width: 75em) {
   .pagination-item {
     position: fixed;
-    top: 50%;
+    top: 80%;
     margin-top: -.875rem;
   }
   .pagination-item.left {
@@ -570,7 +570,7 @@ h1 + .intro {
     float: none;
     right: 2.25rem;
   }
-}
+}*/
 
 @media all and (pointer: coarse) {
   .pagination-item {

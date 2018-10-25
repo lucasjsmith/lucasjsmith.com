@@ -9,6 +9,7 @@
   <meta name="description" content="<?= $site->description()->html() ?>">
 
   <?= css('assets/css/index.css') ?>
+  <?= js('assets/js/welcome.js') ?>
 
 </head>
 <body>
