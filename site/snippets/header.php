@@ -11,6 +11,8 @@
   <?= css('assets/css/index.css') ?>
   <?= js('assets/js/welcome.js', true) ?>
 
+  <?php snippet('social_cards') ?>
+
 </head>
 <body>
 
